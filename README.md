@@ -24,6 +24,17 @@ public static void deleteMedia(File fileOrDirectory) {
 }
 ```
 
+### Share Temp Directory...
+###### The temp directory here `storage\emulated\0\Android\data\YOUR_PACKAGE_NAME\cache\`
+
+```java
+ContextWrapper contextWrapper = new ContextWrapper(BooksActivity.this);
+File file = new File(contextWrapper.getExternalCacheDir() + "/" + IMAGE_NAME + ".png");
+
+// operation on "file" here...
+
+```
+
 ### Fileprovider Authority
 
 - in Manifest.xml
@@ -47,3 +58,16 @@ public static void deleteMedia(File fileOrDirectory) {
         path="." />
 </paths>
 ```
+
+
+### All files comand and its path
+
+| Command of Path [CODE] | Output Path |
+| :--- | :--- |
+| Environment.getDownloadCacheDirectory() | /data/cache |
+| Environment.getExternalStorageDirectory() | /storage/emulated/0 |
+| wrapper.getExternalCacheDirs()[0] | /storage/emulated/0/Android/data/YOUR_PACKAGE/cache |
+| wrapper.getExternalMediaDirs()[0] | /storage/emulated/0/Android/media/YOUR_PACKAGE |
+| wrapper.getFilesDir()  | /data/user/0/YOUR_PACKAGE/files |
+| getApplicationContext().getCacheDir() | /data/user/0/YOUR_PACKAGE/cache |
+| getApplicationContext().getFilesDir() | /data/user/0/YOUR_PACKAGE/files |
