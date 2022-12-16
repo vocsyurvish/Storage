@@ -71,3 +71,4 @@ File file = new File(contextWrapper.getExternalCacheDir() + "/" + IMAGE_NAME + "
 | wrapper.getFilesDir()  | /data/user/0/YOUR_PACKAGE/files |
 | getApplicationContext().getCacheDir() | /data/user/0/YOUR_PACKAGE/cache |
 | getApplicationContext().getFilesDir() | /data/user/0/YOUR_PACKAGE/files |
+| mContext.getExternalFilesDir("DIR_NAME); | /storage/emulated/0/Android/data/YOUR_PACKAGE/files/DIR_NAME |
